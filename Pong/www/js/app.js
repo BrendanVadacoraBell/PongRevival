@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'SimpleRESTIonic' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('pongRevival', ['ionic', 'backand', 'SimpleRESTIonic.controllers', 'SimpleRESTIonic.services'])
+angular.module('pongRevival', ['ionic', 'backand', 'pongRevival.controllers', 'pongRevival.services'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -28,31 +28,30 @@ angular.module('pongRevival', ['ionic', 'backand', 'SimpleRESTIonic.controllers'
 
         $stateProvider
             // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: '/tabs',
-                abstract: true,
-                templateUrl: 'templates/tabs.html'
-            })
-            .state('tab.dashboard', {
-                url: '/dashboard',
-                views: {
-                    'tab-dashboard': {
-                        templateUrl: 'templates/tab-dashboard.html',
-                        controller: 'DashboardCtrl as vm'
-                    }
-                }
-            })
-            .state('tab.login', {
+            .state('login', {
                 url: '/login',
-                views: {
-                    'tab-login': {
-                        templateUrl: 'templates/tab-login.html',
-                        controller: 'LoginCtrl as login'
-                    }
-                }
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController as login'
+            })
+            .state('leaderBoard', {
+                url: '/leaderBoard',
+                templateUrl: 'templates/leaderBoard.html'
+            })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: 'templates/profile.html',
+                controller: 'UserController as user'
+            })
+            .state('tableOpen', {
+                url: '/tableOpen',
+                templateUrl: 'templates/tableOpen.html'
+            })
+            .state('tableTaken', {
+                url: '/tableTaken',
+                templateUrl: 'templates/tableTaken.html'
             });
 
-        $urlRouterProvider.otherwise('/tabs/dashboard');
+        $urlRouterProvider.otherwise('/login');
 
         $httpProvider.interceptors.push('APIInterceptor');
     })

@@ -1,4 +1,4 @@
-angular.module('SimpleRESTIonic.services', [])
+angular.module('pongRevival.services', [])
 
     .service('APIInterceptor', function ($rootScope, $q) {
         var service = this;
@@ -61,4 +61,19 @@ angular.module('SimpleRESTIonic.services', [])
         service.signout = function () {
             return Backand.signout();
         };
+    })
+    .service('ToastService', function($ionicPopup){
+
+        var service = this;
+
+        service.toast = function(message){
+
+            var alertPopup = $ionicPopup.alert({
+                title: message,
+                templateUrl: 'templates/toast.html'
+            });
+
+
+        }
+
     });
