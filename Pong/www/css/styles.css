@@ -1,0 +1,488 @@
+/*
+* @client: Hack the planet
+* @author: Danele Roux
+*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,700);
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../img/loader.gif) center no-repeat white;
+}
+
+* {
+  outline: none !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #3d434d;
+  font-size: 14px;
+  background: #f1f1f1;
+}
+
+.noPadding {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0px;
+}
+
+.btn {
+  border-radius: 4px;
+}
+
+.btn-group-vertical {
+  width: 100%;
+}
+
+input.form-control,
+input.form-control:focus,
+.button, .button:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.footer {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.navbar-default {
+  background: url(../img/headerBg.png);
+  border: none;
+  text-align: center;
+}
+
+.navbar-brand {
+  float: none;
+  margin-top: 0px;
+  font-size: 24px;
+  /*line-height: 40px;*/
+  display: inline-block;
+  color: #fff;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-toggle {
+  border-color: transparent;
+  /*position: relative;
+  float: left;*/
+  padding: 9px 10px;
+  /*margin-top: 8px;
+  margin-left: 10px;
+  margin-bottom: 8px;*/
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0px;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: transparent;
+  /*background: url(../img/headerBg.png);*/
+  text-align: left;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.loginTopContainer {
+  height: 250px;
+  position: relative;
+  z-index: 0;
+}
+
+.form-signin {
+  /*max-width: 330px;*/
+  width: 100%;
+  padding: 15px;
+  margin: -80px auto 0px auto;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 0px 5px #666;
+  position: relative;
+  z-index: 2;
+}
+
+.loginBannerImg {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  background: #3D434D;
+}
+.loginBannerImg img {
+  margin: 0 auto;
+}
+
+.form-signin-heading {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#form-register {
+  z-index: 2;
+  position: relative;
+}
+
+p.forgotPassword {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+#form-reset {
+  max-width: 330px;
+  padding: 15px;
+  margin: -50px auto 0px auto;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 0px 5px #999;
+  position: relative;
+  z-index: 2;
+}
+#form-reset .centerField {
+  border-radius: none !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+}
+
+.loginButtons .btn-primary {
+  color: #fff !important;
+  border: 1px solid #d94040 !important;
+  background: #d94040 !important;
+  margin-bottom: 15px;
+}
+.loginButtons .btn-primary.active.focus, .loginButtons .btn-primary.active:focus,
+.loginButtons .btn-primary.active:hover, .loginButtons .btn-primary:active.focus,
+.loginButtons .btn-primary:active:focus, .loginButtons .btn-primary:active:hover,
+.loginButtons .open > .dropdown-toggle.btn-primary.focus,
+.loginButtons .open > .dropdown-toggle.btn-primary:focus, .loginButtons .open > .dropdown-toggle.btn-primary:hover {
+  color: #fff !important;
+  border: 1px solid #d94040 !important;
+  background: #d94040 !important;
+}
+.loginButtons p.forgotPassword {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+.loginButtons p.forgotPassword a {
+  color: #d94040 !important;
+  margin: 0px !important;
+}
+
+.profilePageTop {
+  background: #3d434d url(../img/profile/bannerBg.png) center center no-repeat;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+.profilePageTop .profileName {
+  margin-top: 40px;
+}
+.profilePageTop .profileName h2 {
+  font-size: 38px;
+  text-shadow: 0px 1px 2px #000;
+}
+.profilePageTop .statsContainer {
+  margin-top: 80px;
+}
+.profilePageTop .statsContainer .scoreCards {
+  width: 111px;
+  height: 124px;
+  display: inline-block;
+  margin: 0px 5px 0px 5px;
+  background: url(../img/profile/scoreCard.png) top left no-repeat;
+  color: #373737;
+  font-size: 65px;
+  line-height: 142px;
+}
+.profilePageTop .statsContainer .scoreCards.red {
+  background: url(../img/profile/scoreCard.png) bottom left no-repeat;
+  color: #fff;
+  text-shadow: 0px 1px 2px #000;
+}
+.profilePageTop .statsContainer p {
+  font-size: 20px;
+  margin: 5px;
+  text-shadow: 0px 1px 2px #000;
+}
+.profilePageTop .gameStats {
+  margin-top: 20px;
+  font-size: 20px;
+  text-shadow: 0px 1px 2px #000;
+}
+.profilePageTop .gameStats .total {
+  font-size: 40px;
+  text-shadow: 0px 1px 2px #000;
+  margin-bottom: 0px;
+}
+.profilePageTop .gameStats .wins {
+  border-right: 1px solid #000;
+}
+.profilePageTop .gameStats .losses {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #000;
+}
+.profilePageTop .gameStats .played {
+  border-left: 1px solid #fff;
+}
+
+.yourRank {
+  text-align: center;
+  font-size: 18px;
+  padding: 15px 0 5px 0;
+}
+.yourRank p {
+  margin: 0px;
+}
+.yourRank p span {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+.profileButtons {
+  margin-top: 15px;
+}
+.profileButtons .btn {
+  color: #d94040;
+  border: 1px solid #d94040;
+  background: #fff;
+  margin-bottom: 15px;
+}
+.profileButtons .btn-primary.active.focus, .profileButtons .btn-primary.active:focus,
+.profileButtons .btn-primary.active:hover, .profileButtons .btn-primary:active.focus,
+.profileButtons .btn-primary:active:focus, .profileButtons .btn-primary:active:hover,
+.profileButtons .open > .dropdown-toggle.btn-primary.focus,
+.profileButtons .open > .dropdown-toggle.btn-primary:focus, .profileButtons .open > .dropdown-toggle.btn-primary:hover {
+  color: #d94040;
+  border: 1px solid #d94040;
+  background: #fff;
+}
+
+.leaderboardContainer {
+  margin-top: 51px;
+}
+.leaderboardContainer .leaderboardEntry {
+  background: #fff;
+  box-shadow: 0px 0px 5px #888;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.leaderboardContainer .leaderboardEntry .rank {
+  float: left;
+  padding: 5px 5px;
+  text-align: center;
+  font-size: 32px;
+  color: #373737;
+  background: #c1c1c1;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: 20%;
+  text-shadow: 0px 1px 1px #fff;
+}
+.leaderboardContainer .leaderboardEntry .rank.first {
+  background: #00CC99;
+  color: #fff;
+  text-shadow: 0px 1px 1px #333;
+}
+.leaderboardContainer .leaderboardEntry .name {
+  float: left;
+  padding: 8px 15px 5px 15px;
+  text-align: left;
+  font-size: 20px;
+  color: #373737;
+  line-height: 20px;
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leaderboardContainer .leaderboardEntry .name span {
+  color: #989898;
+  font-size: 15px;
+}
+.leaderboardContainer .leaderboardEntry .pointCount {
+  float: right;
+  padding: 11px 15px 7px 15px;
+  text-align: center;
+  font-size: 16px;
+  color: #373737;
+  background: #fff;
+  border-left: 1px solid #c1c1c1;
+  line-height: 18px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  width: 20%;
+}
+.leaderboardContainer .leaderboardEntry .pointCount span {
+  color: #989898;
+  font-size: 14px;
+}
+.leaderboardContainer .scrollableLeaderboard {
+  padding-bottom: 150px;
+  overflow: scroll;
+  padding-top: 10px;
+}
+.leaderboardContainer .myLeaderboardEntry {
+  border-top: 1px solid #c1c1c1;
+  box-shadow: 0px 0px 5px #888;
+  position: fixed;
+  background: #f1f1f1;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9;
+}
+.leaderboardContainer .myLeaderboardEntry .leaderboardEntry {
+  margin-top: 20px;
+}
+.leaderboardContainer .myLeaderboardEntry .leaderboardEntry .rank {
+  background: #d94040;
+  color: #fff;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  text-shadow: 0px 1px 1px #333;
+}
+.leaderboardContainer .myLeaderboardEntry .btn-primary {
+  color: #d94040 !important;
+  border: 1px solid #d94040 !important;
+  background: #fff !important;
+  margin-bottom: 15px;
+}
+.leaderboardContainer .myLeaderboardEntry .btn-primary.active.focus, .leaderboardContainer .myLeaderboardEntry .btn-primary.active:focus,
+.leaderboardContainer .myLeaderboardEntry .btn-primary.active:hover, .leaderboardContainer .myLeaderboardEntry .btn-primary:active.focus,
+.leaderboardContainer .myLeaderboardEntry .btn-primary:active:focus, .leaderboardContainer .myLeaderboardEntry .btn-primary:active:hover,
+.leaderboardContainer .myLeaderboardEntry .open > .dropdown-toggle.btn-primary.focus,
+.leaderboardContainer .myLeaderboardEntry .open > .dropdown-toggle.btn-primary:focus, .leaderboardContainer .myLeaderboardEntry .open > .dropdown-toggle.btn-primary:hover {
+  color: #d94040 !important;
+  border: 1px solid #d94040 !important;
+  background: #fff !important;
+}
+
+.whosPlaying {
+  padding: 15px;
+  margin: 65px auto 0px auto;
+  text-align: center;
+  background: #d94040;
+  box-shadow: 0px 0px 5px #666;
+  border-radius: 3px;
+}
+.whosPlaying.openTable {
+  background: #00CC99;
+  padding: 50px 15px;
+}
+.whosPlaying.openTable h2 {
+  line-height: 32px;
+}
+.whosPlaying.openTable p {
+  font-size: 64px;
+}
+.whosPlaying h2 {
+  margin: 10px 0px 10px 0px;
+  line-height: 26px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #333;
+}
+.whosPlaying span {
+  color: #fff;
+  font-size: 18px;
+}
+.whosPlaying p {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #333;
+}
+.whosPlaying .vsLine {
+  border-top: 1px solid #fff;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.whosPlaying .vsLine p {
+  background: #fff;
+  border-radius: 50%;
+  color: #d94040;
+  font-size: 32px;
+  text-shadow: 0px 1px 1px #333;
+  padding: 10px;
+  width: 66px;
+  margin: -33px auto 0px auto;
+}
+
+.whosPlayingButtons {
+  margin-top: 20px;
+}
