@@ -1,0 +1,43 @@
+<div class="container-fluid profilePageTop loginTopContainer">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <!--login page image-->
+        </div><!--/col-->
+
+    </div><!--/row-->
+
+</div><!--/profilePageTop-->
+
+<div class="container-fluid" >
+
+    <div class="row noPadding loginButtons form-signin">
+
+        <div class="col-xs-12">
+
+            <form id="form-signin">
+
+                <h2 class="form-signin-heading">Please sign in</h2>
+
+                <label for="inputEmail" class="sr-only">Email address</label>
+
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  ng-model="data.email">
+
+                <label for="inputPassword" class="sr-only">Password</label>
+
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="data.password">
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
+
+                <p class="forgotPassword"><a href="">Forgot your password?</a></p>
+
+                <p class="forgotPassword"><a href="">Not yet registered?</a></p>
+
+            </form><!--/form-signin-->
+
+        </div><!--/col-->
+
+    </div><!--/row-->
+
+</div> <!--/container-fluid-->
