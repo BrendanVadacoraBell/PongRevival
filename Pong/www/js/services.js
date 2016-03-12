@@ -1,79 +1,96 @@
 angular.module('pongRevival.services', [])
 
-    .service('APIInterceptor', function ($rootScope, $q) {
-        var service = this;
+  .service('APIInterceptor', function ($rootScope, $q) {
+    var service = this;
 
-        service.responseError = function (response) {
-            if (response.status === 401) {
-                $rootScope.$broadcast('unauthorized');
-            }
-            return $q.reject(response);
-        };
-    })
+    service.responseError = function (response) {
+      if (response.status === 401) {
+        $rootScope.$broadcast('unauthorized');
+      }
+      return $q.reject(response);
+    };
+  })
 
-    .service('ItemsModel', function ($http, Backand) {
-        var service = this,
-            baseUrl = '/1/objects/',
-            objectName = 'items/';
+  .service('UserModel', function ($http, Backand, $q) {
+    var service = this,
+      baseUrl = '/1/objects/',
+      objectName = 'users/';
 
-        function getUrl() {
-            return Backand.getApiUrl() + baseUrl + objectName;
-        }
+    function getUrl() {
+      return Backand.getApiUrl() + baseUrl + objectName;
+    }
 
-        function getUrlForId(id) {
-            return getUrl() + id;
-        }
+    function getUrlForId(id) {
+      return getUrl() + id;
+    }
 
-        service.all = function () {
-            return $http.get(getUrl());
-        };
+    service.fetch = function(id) {
+      var deferred = $q.defer();
+      $http.get(getUrlForId(id)).then(function(response){
 
-        service.fetch = function (id) {
-            return $http.get(getUrlForId(id));
-        };
+        deferred.resolve(response.data);
 
-        service.create = function (object) {
-            return $http.post(getUrl(), object);
-        };
+      });
 
-        service.update = function (id, object) {
-            return $http.put(getUrlForId(id), object);
-        };
+      return deferred.promise;
+    };
 
-        service.delete = function (id) {
-            return $http.delete(getUrlForId(id));
-        };
-    })
+    service.setUserId = function(id){
+      userId = id;
+    };
 
-    .service('LoginService', function (Backand) {
-        var service = this;
+    service.getUserId = function(){
 
-        service.signin = function (email, password, appName) {
-            //call Backand for sign in
-            return Backand.signin(email, password);
-        };
+      return userId;
+    };
 
-        service.anonymousLogin= function(){
-            // don't have to do anything here,
-            // because we set app token att app.js
-        }
+    var userId = "";
 
-        service.signout = function () {
-            return Backand.signout();
-        };
-    })
-    .service('ToastService', function($ionicPopup){
+  })
 
-        var service = this;
+  .service('LoginService', function (Backand, UserModel) {
+    var service = this;
 
-        service.toast = function(message){
+    function loadUserDetails() {
 
-            var alertPopup = $ionicPopup.alert({
-                title: message,
-                templateUrl: 'templates/toast.html'
-            });
+      return Backand.getUserDetails()
+        .then(function (data) {
+          if (data !== null)
+            UserModel.setUserId(data.userId);
+        });
+
+    }
 
 
-        }
+    service.signin = function (username, password) {
+      return Backand.signin(username, password)
+        .then(function (response) {
+          loadUserDetails();
+          return response;
+        });
+    };
 
-    });
+    service.anonymousLogin = function () {
+      // don't have to do anything here,
+      // because we set app token att app.js
+    };
+
+    service.signout = function () {
+      return Backand.signout();
+    };
+  })
+  .service('ToastService', function ($ionicPopup) {
+
+    var service = this;
+
+    service.toast = function (message) {
+
+      var alertPopup = $ionicPopup.alert({
+        title: message,
+        templateUrl: 'templates/toast.html'
+      });
+
+
+    }
+
+  });

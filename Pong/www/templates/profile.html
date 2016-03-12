@@ -4,9 +4,7 @@
 
         <div class="col-md-12">
 
-            <div class="scoreCards">01</div>
-
-            <div class="scoreCards">73</div>
+            <div class="scoreCards">{{user.details.points || 0}}</div>
 
             <p>Points</p>
 
@@ -18,7 +16,7 @@
 
         <div class="col-xs-4 wins">
 
-            <p class="total">54</p>
+            <p class="total">{{user.details.wins || 0}}</p>
 
             <p>Wins</p>
 
@@ -26,7 +24,7 @@
 
         <div class="col-xs-4 losses">
 
-            <p class="total">26</p>
+            <p class="total">{{user.details.losses || 0}}</p>
 
             <p>Losses</p>
 
@@ -34,7 +32,7 @@
 
         <div class="col-xs-4 played">
 
-            <p class="total">80</p>
+            <p class="total">{{parseInt(user.details.wins) + parseInt(user.details.losses) || 0}}</p>
 
             <p>Played</p>
 
